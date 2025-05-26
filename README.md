@@ -38,3 +38,24 @@ Métodos habituales:
 - Delete
 - Query: All y ByPk / ById
 
+**Sentencias precompiladas con PreparedStatement**:
+
+De la interfaz Statement podemos saber lo siguiente:
+- Tiene métodos como execute, executeUpdate o executeQuery.
+- Tiene sentencias SQL con parámetros que se proporcionan en una cadena de caracteres.
+    - Esto puede traer problemas porque se pueden utilizar técnicas de SQL INJECTION.
+- Para prevenir problemas de SQL INJECTION se pueden utilizar sentencias precompiladas con PreparedStatement.
+
+PreparedStatement:
+- Es una interfaz que hereda de Statement.
+- Se construye usando el método Connection.prepareStatement(String sql).
+- Tiene una serie de métodos setXXX para establecer parámetros de entrada.
+- En vez de concatener parámetros dentro de una consulta SQL se indican los "huecos" con ? y después se les asignan valores. Ejemplo:
+  ```sql
+  SELECT * FROM users WHERE userId = ?
+  ```
+- JDBC se encarga de "precompilar" la consulta antes de enviarla para poder evitar código malicioso.
+- Los objetivos de tipo PreparedStatement se construyen a través de un objeto Connection.
+
+
+
