@@ -47,7 +47,7 @@
         </dependency>
         <dependency>
 <!--            <groupId>mysql</groupId>-->
-            <groupId>mysql</groupId>
+            <groupId>com.mysql</groupId>
 <!--            <artifactId>mysql-connector-java</artifactId>-->
 <!--            <version>8.0.11</version>-->
             <artifactId>mysql-connector-j</artifactId>
