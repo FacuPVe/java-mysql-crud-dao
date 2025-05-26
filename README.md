@@ -61,7 +61,27 @@ PreparedStatement:
 
 **1.1. Creación del proyecto**:
 
+Propiedades del proyecto:
+- IntelliJ IDEA 
+- Maven: Empty project
+    - Java XX
+    - Group Id
+    - Artifact Id
+- Elementos añadidos en POM.XML:
+    - UTF8, Java 22
+    - plugins (test, compile, exec, ...)
+    - Dependencias: JUnit en el caso de que se hagan pruebas
 
+Driver para poder trabajar con MySQL (versión actual 9.3.0): https://dev.mysql.com/downloads/connector/j/
+
+Añadir la versión en el siguiente código:
+```java
+<dependency>
+    <groupId>mysql</groupId>
+    <artifactId>mysql-connector-j</artifactId>
+    <version>9.3.0</version>
+ </dependency>
+```
 
 **1.2. Establecimiento de la conexión con la base de datos**:
 
