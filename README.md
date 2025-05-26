@@ -85,3 +85,50 @@ Añadir la versión en el siguiente código:
 
 **1.2. Establecimiento de la conexión con la base de datos**:
 
+Algunas interfaces de JDBC:
+- `DriverManager`: responsable de crear una conexión con la base de datos utilizando el driver registrado en el classpath y la URL JDBC.
+
+- La conexión creada por DriverManager se conoce como `Connection`: conexión abierta responsable de crear sentencias SQL. Además debe estar cerrada si no se utiliza.
+
+En caso de que se necesite una conexión abierta por si el usuario lo necesita, se pueden hacer las siguientes soluciones:
+- Abrir y cerrar una conexión cada que sea necesario.
+- Mantener una única conexión abierta.
+- Utilizar un pool de conexiones.
+
+**Pool de conexiones**
+
+Un Pool de conexiones permite crear varias conexiones reutilizables. Ejemplo:
+- Sin un pool de conexiones se crea una propia conexión para cada proceso y debido a eso se pueden gastar muchos recursos ineficientemente si no se gestiona debidamente.
+- Con un pool de conexiones se pueden tener un número máximo de conexiones para gestionar y también se puede ir devolviendo y recibiendo diferentes conexiones para reutilizarlas.
+
+Dependen de:
+- Número de usuarios concurrentes.
+- Tipos de consultas a realizar.
+- Procesadores (núcleos), memoria, tipo de disco, etc.
+
+**Gestionar Pool de conexiones**
+
+Existen diferentes librerías/frameworks para poder trabajar con los Pool de conexiones.
+
+En este proyecto se utiliza HIKARICP debido a las siguientes razones:
+- Peso liviano (130kb).
+- Más ligera y rápida, por lo tanto, menos consumo de memoria.
+- Prevención contra problemas de deadlcok (interbloqueos).
+- Control de detección para ante leaks (conexiones olvidadas).
+- Uso de colecciones más rápidas (FastList en vez de ArrayList).
+
+
+**HIKARICP**
+
+La documentación de HIKARICP se encuentra en https://github.com/brettwooldridge/HikariCP
+
+Las versiones disponibles junto con información de implementación está disponible en: https://central.sonatype.com/search?q=com.zaxxer.hikaricp&smo=true
+
+Código para pom.xml:
+```java
+<dependency>
+    <groupId>com.zaxxer</groupId>
+    <artifactId>HikariCP</artifactId>
+    <version>6.3.0</version>
+</dependency>
+```
