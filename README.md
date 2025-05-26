@@ -6,7 +6,7 @@ Este proyecto sigue los pasos del curso de OpenWebinars llamado "Curso de Java y
 
 ### 1. Introducción
 
-**Archivos creados**:
+**1.1. Archivos creados**:
 
 - docker-compose.yml
 - schema.sql
@@ -19,7 +19,7 @@ Este proyecto sigue los pasos del curso de OpenWebinars llamado "Curso de Java y
 
 Por como está configurado el docker-compose.yml, podremos acceder al phpMyAdmin desde la url `http://localhost:8088/`
 
-**Patrón DAO**:
+**1.2. Patrón DAO**:
 
 En este proyecto se utliza el patrón DAO (Data Access Object), el cual pretende desacoplar la aplicación de la forma de acceder a los datos. O sea, si cambiamos el tipo de la fuente de datos, no tenemos que cambiar el resto de la aplicación. 
 
@@ -38,7 +38,7 @@ Métodos habituales:
 - Delete
 - Query: All y ByPk / ById
 
-**Sentencias precompiladas con PreparedStatement**:
+**1.3. Sentencias precompiladas con PreparedStatement**:
 
 De la interfaz Statement podemos saber lo siguiente:
 - Tiene métodos como execute, executeUpdate o executeQuery.
@@ -57,5 +57,11 @@ PreparedStatement:
 - JDBC se encarga de "precompilar" la consulta antes de enviarla para poder evitar código malicioso.
 - Los objetivos de tipo PreparedStatement se construyen a través de un objeto Connection.
 
+### 2. Establecimiento de la conexión
 
+**1.1. Creación del proyecto**:
+
+
+
+**1.2. Establecimiento de la conexión con la base de datos**:
 
