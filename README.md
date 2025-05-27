@@ -144,27 +144,27 @@ El objeto DAO implementado para la aplicación abstrae cómo se almacena o se ex
 - En la clase se ha aplicado el patrón singleton para poder tener una única instancia para toda la aplicación.
 - Para el método de inserción se utiliza una estructura try-with-resources para abrir los objetos usados en el proyecto.
 
-**3.2. Método de consulta: Introducción*
+**3.2. Método de consulta: Introducción**
 
 Las consultas sin parámetros del proyecto:
 - Método de consulta para atraer todos los empleados
 - No necesitan argumentos de entrada.
 - Implementa try-with-resources.
 
-**3.3. Método de consulta: Conclusión*
+**3.3. Método de consulta: Conclusión**
 
 Las consultas con parámetros del proyecto:
 - Necesitan algún argumento de entrada.
 - Implementan try-with-resources.
 - Necesitan la clave primaria (ID) del empleado.
 
-**3.4. Método de actualización*
+**3.4. Método de actualización**
 
 Método de actualización:
 - Similar al método de inserción.
 - Utiliza try-with-resources.
 
-**3.5. Método de borrado*
+**3.5. Método de borrado**
 
 Método de borrado:
 - Se recibe la clave primaria del empleado(ID) como argumento.
@@ -212,4 +212,21 @@ Características sobre el método de borrado:
 
 - Se solicita por consola el ID del empleado que se quiere borrar.
 - Se solicita una confirmación para asegurar de que no se elimine a un empleado por error.
-- 
+- Se elimina al empleado a través del DAO.
+
+
+# Conclusiones
+
+**¿Qué se ha visto?**
+
+- Introducción: Patrón DAO, sentencias precompiladas, 
+- Pool de conexiones gestionado con HikariCP.
+- Objeto DAO: métodos de creación, consulta, actualización y borrado.
+- Creación de un menú interactivo con opciones para cada uno de los métodos del objeto DAO.
+
+**¿Qué se ha aprendido?**
+
+- La creación de una aplicación de consola que utiliza una base de datos relacional.
+- Buenas prácticas sobre cómo evitar el uso de Inyección SQL como puede ser el uso de sentencias precompiladas.
+- El uso de pool de conexiones para hacer eficiente el uso de recursos.
+- Las operaciones básicas que se pueden hacer en una base de datos MySQL utilizando JDBC.

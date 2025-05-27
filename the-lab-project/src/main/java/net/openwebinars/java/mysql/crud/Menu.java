@@ -196,7 +196,6 @@ public class Menu {
                 emp.getEmail());
     }
 
-
     public void menu() {
         System.out.println("SISTEMA DE GESTIÓN DE EMPLEADOS");
         System.out.println("===============================\n");
