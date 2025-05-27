@@ -146,6 +146,11 @@ El objeto DAO implementado para la aplicación abstrae cómo se almacena o se ex
 
 **3.2. Método de consulta: Introducción*
 
+Las consultas sin parámetros del proyecto:
+- Método de consulta para atraer todos los empleados
+- No necesitan argumentos de entrada.
+- Implementa try-with-resources.
+
 **3.3. Método de consulta: Conclusión*
 
 **3.4. Método de actualización*

@@ -10,6 +10,8 @@ import java.sql.DatabaseMetaData;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.time.LocalDate;
+import java.util.List;
+
 
 public class App {
 
@@ -28,6 +30,14 @@ public class App {
         try {
             int n = dao.add(emp);
             System.out.println("El número de registros insertados es: " + n);
+
+            List<Empleado> empleados = dao.getAll();
+
+            if (empleados.isEmpty())
+                System.out.println("No hay empleados registrados");
+            else
+                empleados.forEach(System.out::println);
+            
         } catch (SQLException e) {
             e.printStackTrace();
         }

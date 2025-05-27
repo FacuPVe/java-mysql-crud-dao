@@ -72,6 +72,9 @@ public class EmpleadoDaoImpl implements EmpleadoDao {
         return result;
     }
 
+    /**
+     * Obtiene a todos los empleados.
+     */
     @Override
     public List<Empleado> getAll() throws SQLException {
 
