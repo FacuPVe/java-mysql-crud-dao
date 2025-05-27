@@ -171,9 +171,16 @@ Método de borrado:
 - Utiliza try-with-resources.
 - Habitualmente no suelen devolver nada.
 
-### 4. Elaboración de un CRUD
+### 4. Desarrollo del resto de la aplicación
 
 **4.1. Desarrollo del menú**
+
+Para el desarrollo del menú se han hecho las siguientes implementaciones:
+- Una clase con el menú.
+- Diferentes métodos para cada opción del CRUD.
+- Una clase para la lectura por teclado sin el uso de Scanner debido a que es más lento.
+- La lectujra por teclado se hace con BufferedReader y StringTokenizer.
+
 **4.2. Método de inserción**
 **4.3. Método de consulta de todos los registros**
 **4.4. Método de consulta por la clave primaria**

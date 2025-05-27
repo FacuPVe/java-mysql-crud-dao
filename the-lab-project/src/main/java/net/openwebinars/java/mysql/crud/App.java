@@ -16,8 +16,11 @@ import java.util.List;
 public class App {
 
     public static void main(String[] args) {
-//        System.out.println("Hello World!");
-        testDao();
+        // System.out.println("Hello World!");
+        // testPool();
+        // testDao();
+        Menu menu = new Menu();
+        menu.init();
     }
 
     public static void testDao() {
