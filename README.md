@@ -193,5 +193,15 @@ Sobre este método de consulta podemos saber lo siguiente:
 - Se formatea la salida para imprimir los datos más estructurados con printf.
 
 **4.4. Método de consulta por la clave primaria**
+
+Características sobre el método de consulta por clave primaria:
+- Se solicita por consola el ID del empleado que se quiere buscar.
+- Se realiza la consulta a través del DAO.
+- Se reutilizan los métodos que formateaban la salida para tener los datos mostrados mejor estructurados.
+
 **4.5. Método de actualización**
+
+
+
 **4.6. Método de borrado**
+

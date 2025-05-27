@@ -34,7 +34,9 @@ public class Menu {
                 case 1:
                     listAll();
                     break;
-                case 2: break;
+                case 2:
+                    listById();
+                    break;
                 case 3:
                     insert();
                     break;
@@ -66,8 +68,31 @@ public class Menu {
             System.err.println("Error consultando en la base de datos. Vuelva a intentarlo de nuevo o póngase en contacto con el administrador.");
         }
         System.out.println("\n");
-
     }
+
+    public void listById() {
+
+        System.out.println("\nBÚSQUEDA DE EMPLEADOS POR ID");
+        System.out.println("------------------------------\n");
+
+        try {
+            System.out.print("Introduzca el ID del empleado a buscar: ");
+            int id = reader.nextInt();
+
+            Empleado empleado =  dao.getById(id);
+
+            if (empleado == null)
+                System.out.println("No hay empleados registrados en la base de datos con ese ID");
+            else {
+                printCabeceraTablaEmpleado();
+                printEmpleado(empleado);
+            }
+            System.out.println("\n");
+        } catch (SQLException ex) {
+            System.err.println("Error consultando en la base de datos. Vuelva a intentarlo de nuevo o póngase en contacto con el administrador.");
+        }
+    }
+
 
     private void printCabeceraTablaEmpleado() {
         System.out.printf("%2s %30s %8s %10s %25s", "ID", "NOMBRE", "FEC. NAC.", "PUESTO", "EMAIL");
