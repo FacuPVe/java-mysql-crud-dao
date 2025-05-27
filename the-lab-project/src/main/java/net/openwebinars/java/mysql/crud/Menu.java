@@ -43,7 +43,9 @@ public class Menu {
                 case 4:
                     update();
                     break;
-                case 5: break;
+                case 5:
+                    delete();
+                    break;
                 case 0:
                     System.out.println("\nSaliendo del programa...\n");
                     break;
@@ -147,6 +149,29 @@ public class Menu {
                 System.out.println("");
                 System.out.printf("Empleado con ID %s actualizado", empleado.getId_empleado());
                 System.out.println("");
+            }
+        } catch (SQLException ex) {
+            System.err.println("Error consultando en la base de datos. Vuelva a intentarlo de nuevo o póngase en contacto con el administrador.");
+        }
+        System.out.println("");
+    }
+
+    public void delete() {
+
+        System.out.println("\nBORRADO DE UN EMPLEADO");
+        System.out.println("--------------------------\n");
+
+        try {
+
+            System.out.print("Introduzca el ID del empleado a borrar: ");
+            int id = reader.nextInt();
+
+            System.out.printf("¿Está usted seguro de querer eliminar el empleado con ID=%s? (s/n): ", id);
+            String borrar = reader.nextLine();
+
+            if (borrar.equalsIgnoreCase("s")) {
+                dao.delete(id);
+                System.out.printf("El empleado con ID %s se ha borrado\n", id);
             }
         } catch (SQLException ex) {
             System.err.println("Error consultando en la base de datos. Vuelva a intentarlo de nuevo o póngase en contacto con el administrador.");

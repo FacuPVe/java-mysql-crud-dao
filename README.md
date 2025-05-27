@@ -201,10 +201,15 @@ Características sobre el método de consulta por clave primaria:
 
 **4.5. Método de actualización**
 
-Característicad sobre el método de actualización:
+Características sobre el método de actualización:
 - Se solicita el ID y se busca al empleado.
 - Si existge el empleado se muestran los datos actuales y después se recogen los nuevos datos.
 - En caso de que no se quiera modificar un dato, se reutiliza el dato antiguo con la captura de ningún caracter introducido.
 
 **4.6. Método de borrado**
 
+Características sobre el método de borrado:
+
+- Se solicita por consola el ID del empleado que se quiere borrar.
+- Se solicita una confirmación para asegurar de que no se elimine a un empleado por error.
+- 
