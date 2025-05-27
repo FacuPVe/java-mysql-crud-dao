@@ -137,6 +137,9 @@ public class EmpleadoDaoImpl implements EmpleadoDao {
         return result;
     }
 
+    /**
+     * Elimina un empleado de la base de datos mediante su ID.
+     */
     @Override
     public void delete(int id) throws SQLException {
 

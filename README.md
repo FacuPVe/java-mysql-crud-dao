@@ -166,5 +166,7 @@ Método de actualización:
 
 **3.5. Método de borrado*
 
-
-
+Método de borrado:
+- Se recibe la clave primaria del empleado(ID) como argumento.
+- Utiliza try-with-resources.
+- Habitualmente no suelen devolver nada.

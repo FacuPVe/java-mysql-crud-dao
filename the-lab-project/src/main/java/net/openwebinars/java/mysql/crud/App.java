@@ -48,6 +48,13 @@ public class App {
 
             System.out.println("\nEmpleado actualizado:\n" + emp1 + "\n");
 
+            dao.delete(1);
+            empleados = dao.getAll();
+
+            if (empleados.isEmpty())
+                System.out.println("No hay empleados registrados");
+            else
+                empleados.forEach(System.out::println);
         } catch (SQLException e) {
             e.printStackTrace();
         }
