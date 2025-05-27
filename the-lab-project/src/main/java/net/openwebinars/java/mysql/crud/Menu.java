@@ -15,9 +15,11 @@ import java.util.stream.IntStream;
 public class Menu {
 
     private KeyboardReader reader;
+    private EmpleadoDao dao;
 
     public Menu() {
         reader = new KeyboardReader();
+        dao = EmpleadoDaoImpl.getInstance();
     }
 
     public void init(){
@@ -31,7 +33,9 @@ public class Menu {
             switch (opcion) {
                 case 1: break;
                 case 2: break;
-                case 3: break;
+                case 3:
+                    insert();
+                    break;
                 case 4: break;
                 case 5: break;
                 case 0:
@@ -54,6 +58,35 @@ public class Menu {
         System.out.println("4: Actualizar un empleado");
         System.out.println("5: Eliminar un empleado");
         System.out.print("\nOpción: ");
+    }
+
+    public void insert() {
+
+        System.out.println("\nINSERCIÓN DE UN NUEVO EMPLEADO");
+        System.out.println("------------------------------\n");
+
+        System.out.print("Introduzca el nombre (sin apellidos) del empleado: ");
+        String nombre = reader.nextLine();
+
+        System.out.print("Introduzca los apellidos del empleado: ");
+        String apellidos = reader.nextLine();
+
+        System.out.print("Introduzca la fecha de nacimiento del empleado (formato dd/MM/aaaa): ");
+        LocalDate fechaNacimiento = reader.nextLocalDate();
+
+        System.out.print("Introduzca el puesto del empleado: ");
+        String puesto = reader.nextLine();
+
+        System.out.print("Introduzca el email del nuevo empleado: ");
+        String email = reader.nextLine();
+
+        try {
+            dao.add(new Empleado(nombre, apellidos, fechaNacimiento, puesto, email));
+            System.out.println("Nuevo empleado registrado");
+        } catch (SQLException ex) {
+            System.err.println("Error insertando el nuevo registro en la base de datos. Vuelva a intentarlo de nuevo o póngase en contacto con el administrador.");
+        }
+        System.out.println("");
     }
 
     static class KeyboardReader {

@@ -182,6 +182,9 @@ Para el desarrollo del menú se han hecho las siguientes implementaciones:
 - La lectujra por teclado se hace con BufferedReader y StringTokenizer.
 
 **4.2. Método de inserción**
+
+En el método de inserción se solicitan los datos del nuevo empleado por consola mediante el reader y se utiliza el DAO para poder hacer la inserción.
+
 **4.3. Método de consulta de todos los registros**
 **4.4. Método de consulta por la clave primaria**
 **4.5. Método de actualización**
