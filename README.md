@@ -170,3 +170,12 @@ Método de borrado:
 - Se recibe la clave primaria del empleado(ID) como argumento.
 - Utiliza try-with-resources.
 - Habitualmente no suelen devolver nada.
+
+### 4. Elaboración de un CRUD
+
+**4.1. Desarrollo del menú**
+**4.2. Método de inserción**
+**4.3. Método de consulta de todos los registros**
+**4.4. Método de consulta por la clave primaria**
+**4.5. Método de actualización**
+**4.6. Método de borrado**
