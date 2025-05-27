@@ -37,7 +37,10 @@ public class App {
                 System.out.println("No hay empleados registrados");
             else
                 empleados.forEach(System.out::println);
-            
+
+            Empleado emp1 = dao.getById(1);
+            System.out.println("\nSe ha encontrado al siguiente empleado:\n" + emp1);
+
         } catch (SQLException e) {
             e.printStackTrace();
         }

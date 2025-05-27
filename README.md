@@ -153,6 +153,12 @@ Las consultas sin parámetros del proyecto:
 
 **3.3. Método de consulta: Conclusión*
 
+Las consultas con parámetros del proyecto:
+- Necesitan algún argumento de entrada.
+- Implementan try-with-resources.
+- Necesitan la clave primaria (ID) del empleado.
+
+
 **3.4. Método de actualización*
 
 **3.5. Método de borrado*

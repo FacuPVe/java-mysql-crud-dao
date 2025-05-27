@@ -44,6 +44,9 @@ public class EmpleadoDaoImpl implements EmpleadoDao {
         return result;
     }
 
+    /**
+     * Se obtiene un empleado mediante su ID.
+     */
     @Override
     public Empleado getById(int id) throws SQLException {
 
