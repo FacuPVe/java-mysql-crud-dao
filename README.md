@@ -135,16 +135,22 @@ Código para pom.xml:
 
 ### 3. Desarrollo del DAO
 
-**3.1. Creación del objeto y método de inserción**:
+**3.1. Creación del objeto y método de inserción**
 
+El objeto DAO implementado para la aplicación abstrae cómo se almacena o se extrae la información ofreciendo clases POJO (Plain Old Java Object) que representarán los elementos de información del sistema (entidad de información).
 
-**3.2. Método de consulta: Introducción*:
+- Permite manejar toda la información de la tabla.
+- El objeto DAO se define mediante una interfaz y clase.
+- En la clase se ha aplicado el patrón singleton para poder tener una única instancia para toda la aplicación.
+- Para el método de inserción se utiliza una estructura try-with-resources para abrir los objetos usados en el proyecto.
 
-**3.3. Método de consulta: Conclusión*:
+**3.2. Método de consulta: Introducción*
 
-**3.4. Método de actualización*:
+**3.3. Método de consulta: Conclusión*
 
-**3.5. Método de borrado*:
+**3.4. Método de actualización*
+
+**3.5. Método de borrado*
 
 
 
