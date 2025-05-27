@@ -186,6 +186,12 @@ Para el desarrollo del menú se han hecho las siguientes implementaciones:
 En el método de inserción se solicitan los datos del nuevo empleado por consola mediante el reader y se utiliza el DAO para poder hacer la inserción.
 
 **4.3. Método de consulta de todos los registros**
+
+Sobre este método de consulta podemos saber lo siguiente:
+- Solo se recoge la opción del menú.
+- Se realiza la consulta a través del Dao.
+- Se formatea la salida para imprimir los datos más estructurados con printf.
+
 **4.4. Método de consulta por la clave primaria**
 **4.5. Método de actualización**
 **4.6. Método de borrado**

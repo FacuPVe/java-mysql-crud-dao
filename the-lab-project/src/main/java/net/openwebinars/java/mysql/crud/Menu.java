@@ -31,7 +31,9 @@ public class Menu {
             opcion = reader.nextInt();
 
             switch (opcion) {
-                case 1: break;
+                case 1:
+                    listAll();
+                    break;
                 case 2: break;
                 case 3:
                     insert();
@@ -46,6 +48,44 @@ public class Menu {
             }
         } while (opcion != 0);
     }
+
+    public void listAll() {
+        System.out.println("\nLISTADO DE TODOS LOS EMPLEADOS");
+        System.out.println("--------------------------------\n");
+
+        try {
+            List<Empleado> result = dao.getAll();
+
+            if (result.isEmpty())
+                System.out.println("No hay empleados registrados en la base de datos");
+            else {
+                printCabeceraTablaEmpleado();
+                result.forEach(this::printEmpleado);
+            }
+        } catch (SQLException ex) {
+            System.err.println("Error consultando en la base de datos. Vuelva a intentarlo de nuevo o póngase en contacto con el administrador.");
+        }
+        System.out.println("\n");
+
+    }
+
+    private void printCabeceraTablaEmpleado() {
+        System.out.printf("%2s %30s %8s %10s %25s", "ID", "NOMBRE", "FEC. NAC.", "PUESTO", "EMAIL");
+        System.out.println("");
+        IntStream.range(1, 100).forEach(x -> System.out.print("-"));
+        System.out.println("\n");
+
+    }
+
+    private void printEmpleado(Empleado emp) {
+        System.out.printf("%2s %30s %9s %10s %25s\n",
+                emp.getId_empleado(),
+                emp.getNombre() + " " + emp.getApellidos(),
+                emp.getFechaNacimiento().format(DateTimeFormatter.ofPattern("dd/MM/yy")),
+                emp.getPuesto(),
+                emp.getEmail());
+    }
+
 
     public void menu() {
         System.out.println("SISTEMA DE GESTIÓN DE EMPLEADOS");
