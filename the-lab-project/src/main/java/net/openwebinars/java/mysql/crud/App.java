@@ -41,6 +41,13 @@ public class App {
             Empleado emp1 = dao.getById(1);
             System.out.println("\nSe ha encontrado al siguiente empleado:\n" + emp1);
 
+            emp1.setFechaNacimiento(LocalDate.of(1992, 9, 19));
+            n = dao.update(emp1);
+
+            emp1 = dao.getById(1);
+
+            System.out.println("\nEmpleado actualizado:\n" + emp1 + "\n");
+
         } catch (SQLException e) {
             e.printStackTrace();
         }

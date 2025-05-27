@@ -158,8 +158,11 @@ Las consultas con parámetros del proyecto:
 - Implementan try-with-resources.
 - Necesitan la clave primaria (ID) del empleado.
 
-
 **3.4. Método de actualización*
+
+Método de actualización:
+- Similar al método de inserción.
+- Utiliza try-with-resources.
 
 **3.5. Método de borrado*
 

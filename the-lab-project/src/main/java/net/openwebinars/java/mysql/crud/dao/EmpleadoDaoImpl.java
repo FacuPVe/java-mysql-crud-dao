@@ -106,6 +106,9 @@ public class EmpleadoDaoImpl implements EmpleadoDao {
         return result;
     }
 
+    /**
+     * Actualiza los datos de un empleado mediante su ID.
+     */
     @Override
     public int update(Empleado emp) throws SQLException {
 
